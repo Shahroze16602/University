@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Assignment 9</title>
+    <style>
+        div {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            background-color: #fff;
+        }
+
+        input[type="text"] {
+            width: 50%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="button"] {
+            width: 70px;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        input[type="button"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script>
+        function swap() {
+            v1 = document.getElementById("num1").value;
+            v2 = document.getElementById("num2").value;
+            document.getElementById("num1").value = v2;
+            document.getElementById("num2").value = v1;
+        }
+    </script>
+</head>
+
+<body>
+    <center>
+        <h1> Swap </h1>
+        <div>
+            Number 1 <br><input type="number" id="num1"><br>
+            Number 2 <br><input type="number" id="num2"><br>
+            <br>
+            <input type="button" value="Swap" onClick="swap()">
+        </div>
+    </center>
+</body>
+
+</html>

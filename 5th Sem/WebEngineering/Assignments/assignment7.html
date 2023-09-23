@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Assignment 7</title>
+    <style>
+        div {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            background-color: #fff;
+        }
+
+        input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="button"] {
+            width: 100px;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        input[type="button"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script>
+        var timer;
+
+        function startTimer() {
+            timer = setInterval(setDate, 1000);
+        }
+
+        function stopTimer() {
+            clearInterval(timer);
+        }
+
+        function setDate() {
+            var date = new Date();
+            document.getElementById("txt_date_time").value = date.toLocaleString();
+        }
+
+        function clearText() {
+            clearInterval(timer);
+            document.getElementById("txt_date_time").value = "";
+        }
+    </script>
+</head>
+
+<body>
+    <center>
+        <h1>Date and Time</h1>
+        <div>
+            <input type="text" id="txt_date_time" size="30" readonly placeholder="Date and Time"><br>
+            <br>
+            <input type="button" value="Start" onClick="startTimer()">
+            <input type="button" value="Stop" onClick="stopTimer()">
+            <input type="button" value="Clear" onClick="clearText()">
+        </div>
+    </center>
+</body>
+
+</html>

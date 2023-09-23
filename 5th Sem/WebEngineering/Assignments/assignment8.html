@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Assignment 8</title>
+    <style>
+        div {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            background-color: #fff;
+        }
+
+        input[type="text"] {
+            width: 50%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="button"] {
+            width: 70px;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        input[type="button"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script>
+        let timer;
+        let hh = 0;
+        let mm = 0;
+        let ss = 0;
+
+        function startTimer() {
+            timer = setInterval(updateTime, 100);
+        }
+
+        function stopTimer() {
+            clearInterval(timer);
+        }
+
+        function resetTimer() {
+            clearInterval(timer);
+            hh = 0;
+            mm = 0;
+            ss = 0;
+            updateDisplay();
+        }
+
+        function updateTime() {
+            ss++;
+            if (ss === 60) {
+                ss = 0;
+                mm++;
+                if (mm === 60) {
+                    mm = 0;
+                    hh++;
+                }
+            }
+            updateDisplay();
+        }
+
+        function updateDisplay() {
+            let timeStr = hh.toString().padStart(2, '0') + ':' + mm.toString().padStart(2, '0') + ':' + ss.toString().padStart(2, '0');
+            document.getElementById("txt_time").value = timeStr;
+        }
+    </script>
+</head>
+
+<body>
+    <center>
+        <h1> Stop Watch </h1>
+        <div>
+            <input type="text" id="txt_time" size="11" value="00:00:00" readonly style="text-align: center;"> <br><br>
+            <input type="button" value="Start" onClick="startTimer()">
+            <input type="button" value="Stop" onClick="stopTimer()">
+            <input type="button" value="Reset" onclick="resetTimer()">
+        </div>
+    </center>
+</body>
+
+</html>

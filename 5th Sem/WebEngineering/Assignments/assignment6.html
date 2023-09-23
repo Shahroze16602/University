@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Assignment 6</title>
+    <style>
+        div {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            background-color: #fff;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+        }
+
+        input[type="button"] {
+            padding: 10px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        input[type="button"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script>
+        function add() {
+            v1 = document.getElementById("num1").value;
+            v2 = document.getElementById("num2").value;
+            v3 = parseInt(v1) + parseInt(v2);
+            document.getElementById("result").value = v3;
+        }
+        function sub() {
+            v1 = document.getElementById("num1").value;
+            v2 = document.getElementById("num2").value;
+            v3 = parseInt(v1) - parseInt(v2);
+            document.getElementById("result").value = v3;
+        }
+        function mul() {
+            v1 = document.getElementById("num1").value;
+            v2 = document.getElementById("num2").value;
+            v3 = parseFloat(v1) * parseFloat(v2);
+            document.getElementById("result").value = v3;
+        }
+        function div() {
+            v1 = document.getElementById("num1").value;
+            v2 = document.getElementById("num2").value;
+            if (parseFloat(v2) === 0) {
+                alert("Division by zero is not allowed");
+            } else {
+                v3 = parseFloat(v1) / parseFloat(v2);
+                document.getElementById("result").value = v3;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <center>
+        <h1> Calculator </h1>
+        <div>
+
+            Number 1 <br><input type="number" id="num1"><br>
+            Number 2 <br><input type="number" id="num2"><br>
+            Result <br><input type="number" id="result" readonly><br>
+            <br>
+            <input type="button" value=" + " onClick="add()">
+            <input type="button" value=" - " onClick="sub()">
+            <input type="button" value=" x " onClick="mul()">
+            <input type="button" value=" / " onClick="div()">
+        </div>
+    </center>
+</body>
+
+</html>
