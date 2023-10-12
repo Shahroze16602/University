@@ -5,14 +5,20 @@
     CNO dw 0
     ten dw 10
     intArray dw 5 DUP(0)
-    small dw 100
+    small dw 0
 .Code 
 	main proc
 		mov AX, @Data
 		mov DS, AX
 
         mov SI, offset intArray
-        mov CX, 5
+        call getNo
+        mov AX, PNO
+        mov [SI], AX
+        add SI, 2
+        mov small, AX
+
+        mov CX, 4
         inputArray:
             call getNo
             mov AX, PNO
